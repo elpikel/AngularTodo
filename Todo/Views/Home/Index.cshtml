@@ -1,0 +1,21 @@
+﻿<div id="body" ng-controller="TodoController">
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>Todo List <span>{{remaining()}} of {{todos.length}} remaining</span> </h1>
+            </hgroup>
+        </div>
+    </section>
+    <section class="content-wrapper main-content clear-fix">
+        <span style="color: red">{{ errorMessage }}</span>
+        <ol class="round">
+            <li ng-repeat="todo in todos">
+                <todo-item isDone="{{todo.IsDone}}" name="{{todo.Name}}"></todo-item>
+            </li>
+        </ol>
+        <form name="todoForm" ng-submit="addTodo()">
+            <input name="todoName" type="text" ng-model="todoText" ng-maxlength="5" placeholder="add new todo here">
+            <input type="submit" value="add" ng-disabled="todoForm.$invalid">
+        </form>
+    </section>
+</div>

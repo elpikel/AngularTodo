@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+<html ng-app="TodoApp">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>Todo's</title>
+        @Styles.Render("~/Content/css")
+        <script src="~/Scripts/angular.js"></script>
+        <script src="~/Scripts/Controllers/TodoController.js"></script>
+        <script src="~/Scripts/Directives/TodoTemplate.js"></script>
+        <script src="~/Scripts/app.js"></script>
+    </head>
+    <body>
+        @RenderBody()
+
+        @RenderSection("scripts", required: false)
+    </body>
+</html>
